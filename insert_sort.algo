@@ -1,0 +1,17 @@
+ALGORITHM ins_sort
+VAR
+    t: ARRAY_OF INTEGER;
+    i,j,key: INTEGER:=0;
+BEGIN
+    Read (t);
+    FOR i FROM 0 TO t.length-1 STEP 1 DO
+        key := t[i];
+
+        j = i-1;
+        WHILE j >= 0 AND t[j] >key DO
+            t[j + 1] = t[j];
+            j:=j- 1;
+        END_WHILE
+        t[j + 1] = key;
+    END_FOR
+END
